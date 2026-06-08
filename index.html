@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mokuren – JLPT Juli · Murid Baru</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Nunito:wght@400;600;700;800;900&amp;family=Noto+Sans+JP:wght@400;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --lavender: #9B7FD4;
+    --lavender-light: #C4A8F0;
+    --lavender-pale: #F0EAFF;
+    --yellow: #F9C74F;
+    --dark: #2D2438;
+    --white: #FDFAFF;
+  }
+
+  body {
+    background: #EDE6FA;
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  .poster {
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 24px 60px rgba(100,60,180,0.18), 0 4px 16px rgba(0,0,0,0.08);
+    animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.88) translateY(30px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  /* Header */
+  .baru-header {
+    background: linear-gradient(135deg, #9B7FD4 0%, #B99AE8 60%, #C8B0F0 100%);
+    padding: 32px 32px 48px;
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .baru-header::after {
+    content: '';
+    position: absolute; bottom: -1px; left: 0; right: 0; height: 40px;
+    background: var(--white);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .hblob1 { position: absolute; width: 160px; height: 160px; background: rgba(255,255,255,0.12); border-radius: 50%; top: -50px; right: -30px; pointer-events: none; }
+  .hblob2 { position: absolute; width: 100px; height: 100px; background: rgba(255,255,255,0.08); border-radius: 50%; bottom: 20px; left: -20px; pointer-events: none; }
+
+  .baru-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 13.5px; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 8px 18px; border-radius: 999px;
+    margin-bottom: 14px; position: relative; z-index: 1;
+  }
+
+  .baru-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 44px; font-weight: 800;
+    color: #fff; line-height: 1.05;
+    position: relative; z-index: 1;
+    text-shadow: 0 2px 12px rgba(80,40,150,0.3);
+  }
+  .baru-title .big { display: block; font-size: 54px; }
+
+  .baru-title-jp {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px; color: rgba(255,255,255,0.65);
+    letter-spacing: 4px; margin-top: 6px;
+    position: relative; z-index: 1;
+  }
+
+  /* Body */
+  .baru-body { padding: 12px 28px 32px; }
+
+  .baru-intro { text-align: center; font-size: 18px; color: #888; margin: 8px 0 22px; line-height: 1.6; }
+  .baru-intro strong { color: var(--lavender); }
+
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px; }
+  .feature-item {
+    background: var(--lavender-pale);
+    border-radius: 14px; padding: 14px 14px;
+    border: 1.5px solid #DDD0F8;
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .feature-emoji { font-size: 26px; flex-shrink: 0; line-height: 1; margin-top: 1px; }
+  .feature-text { font-size: 16px; font-weight: 700; color: var(--dark); line-height: 1.4; }
+  .feature-text small { display: block; font-weight: 600; color: #aaa; font-size: 14px; margin-top: 2px; }
+
+  .level-row { display: flex; gap: 8px; margin-bottom: 20px; justify-content: center; flex-wrap: wrap; }
+  .level-badge {
+    background: var(--dark); color: #fff;
+    font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 600;
+    padding: 8px 24px; border-radius: 999px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .level-badge .lbdot { width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); }
+
+  .baru-price-wrap {
+    background: linear-gradient(135deg, var(--lavender-pale), #FFF5E4);
+    border-radius: 20px; padding: 20px 22px;
+    border: 2px solid #DDD0F8;
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 18px;
+  }
+  .baru-price-icon { font-size: 42px; flex-shrink: 0; }
+  .baru-price-content { flex: 1; }
+  .baru-price-label { font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #bbb; margin-bottom: 4px; }
+  .baru-price-amount { font-family: 'Syne', sans-serif; font-size: 42px; font-weight: 800; color: var(--lavender); line-height: 1; }
+  .baru-price-unit { font-size: 16px; color: #aaa; margin-top: 3px; }
+  .baru-price-note {
+    background: var(--lavender); color: #fff;
+    font-size: 14px; font-weight: 800;
+    padding: 8px 14px; border-radius: 12px;
+    text-align: center; line-height: 1.5; flex-shrink: 0; max-width: 110px;
+  }
+
+  .baru-cta {
+    width: 100%;
+    background: linear-gradient(135deg, #9B7FD4, #C4A8F0);
+    color: #fff; font-family: 'Fredoka', sans-serif;
+    font-size: 22px; font-weight: 600;
+    border: none; border-radius: 14px; padding: 16px;
+    cursor: pointer; letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(155,127,212,0.35);
+    transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .baru-cta:hover { transform: translateY(-2px) scale(1.02); }
+
+  .baru-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; }
+  .baru-brand { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: #ccc; }
+  .baru-brand span { color: var(--lavender); }
+  .baru-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; color: #ccc; letter-spacing: 2px; }
+
+  @media (max-width: 420px) {
+    .baru-title .big { font-size: 40px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .baru-body { padding: 10px 20px 24px; }
+    .baru-header { padding: 26px 22px 44px; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="baru-header">
+    <div class="hblob1"></div>
+    <div class="hblob2"></div>
+    <div class="baru-badge">🌸 Open Registration</div>
+    <h1 class="baru-title">
+      <span class="big">JLPT Juli</span>
+      Intensive Class
+    </h1>
+    <div class="baru-title-jp">7月 日本語能力試験対策</div>
+  </div>
+
+  <div class="baru-body">
+    <p class="baru-intro">
+      Mau lulus JLPT dan mantepin hasil belajarnya?<br>
+      <strong>Masih ada waktu!</strong> Yuk intensif bareng Mokuren 🌸
+    </p>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="feature-emoji">📚</div>
+        <div class="feature-text">
+          Latihan soal terstruktur
+          <small>Grammar, kosakata &amp; pola ujian</small>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-emoji">🎯</div>
+        <div class="feature-text">
+          Materi fokus &amp; terarah
+          <small>Disesuaikan target level</small>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-emoji">💬</div>
+        <div class="feature-text">
+          Privat 1-on-1
+          <small>75 menit per sesi</small>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-emoji">📅</div>
+        <div class="feature-text">
+          Jadwal fleksibel
+          <small>Google Meet</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-row">
+      <div class="level-badge"><div class="lbdot"></div> JLPT N5</div>
+      <div class="level-badge"><div class="lbdot"></div> JLPT N4</div>
+    </div>
+
+    <div class="baru-price-wrap">
+      <div class="baru-price-icon">✨</div>
+      <div class="baru-price-content">
+        <div class="baru-price-label">Harga per Sesi</div>
+        <div class="baru-price-amount">Rp 120K</div>
+        <div class="baru-price-unit">privat · 75 menit</div>
+      </div>
+      <div class="baru-price-note">Slot<br>Terbatas!</div>
+    </div>
+
+    <a href="https://wa.me/6282139265577?text=Halo%20saya%20ingin%20mendaftar%20Kelas%20Grup%20Percakapan">
+      <button class="baru-cta">🌸 Daftar Sekarang!</button>
+    </a>
+
+    <div class="baru-footer">
+      <div class="baru-brand"><span>Mokuren</span> · モクレン</div>
+      <div class="baru-jp">Les Privat Bahasa Jepang</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
